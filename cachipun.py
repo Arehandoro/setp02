@@ -21,6 +21,7 @@ def ganador_cachipun(game, contador):    #Función que evalua las jugadas de cac
     else:
         raise Exception("\n\n¡Jugada no válida!")    #Si se ingresa una jugada incorrecta, levanta la excepción.
 
+
 print("###############  CA-CHI-PÚN  ###############\n\n")
 print("Presione (1):  1 Jugador.\nPresione (2):  2 Jugadores.\n")
 opcion = input("Ingrese el modo de juego... ")    #Lee la opción de jugadores ingresada por el usuario.
