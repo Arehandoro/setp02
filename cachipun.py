@@ -13,18 +13,19 @@ def ganador_cachipun(game, contador):    #Función que evalua las jugadas de cac
     if( (game[0][1]=="R" or game[0][1]=="P" or game[0][1]=="T") and (game[1][1]=="R" or game[1][1]=="P" or game[1][1]=="T") ):    #Evalua las jugadas posibles, osea validas.
         print("Partida Nº",contador,"\t",game,"\n")
         if( (game[0][1]=="R" and game[1][1]=="T") or (game[0][1]=="P" and game[1][1]=="R") or (game[0][1]=="T" and game[1][1]=="P") ):
-            return print("¡Ganador! ",game[0])    #Si el primer jugador gana, lo retorna en pantalla.
+            print("¡Ganador! ",game[0])    #Si el primer jugador gana, lo retorna en pantalla.
         elif( (game[1][1]=="R" and game[0][1]=="T") or (game[1][1]=="P" and game[0][1]=="R") or (game[1][1]=="T" and game[0][1]=="P") ):
-            return print("¡Ganador! ",game[1])    #Si el segundo jugador gana, lo retorna en pantalla.
+            print("¡Ganador! ",game[1])    #Si el segundo jugador gana, lo retorna en pantalla.
         else:
-            return print("¡Empate por lo tanto Ganador! ",game[0])    ##Si ocurre empate, gana primer jugador y lo retorna en pantalla.
+            print("¡Empate por lo tanto Ganador! ",game[0])    ##Si ocurre empate, gana primer jugador y lo retorna en pantalla.
     else:
         raise Exception("\n\n¡Jugada no válida!")    #Si se ingresa una jugada incorrecta, levanta la excepción.
 
-print("*** CA-CHI-PÚN ***\n\n")
+print("###############  CA-CHI-PÚN  ###############\n\n")
 print("Presione (1):  1 Jugador.\nPresione (2):  2 Jugadores.\n")
 opcion = input("Ingrese el modo de juego... ")    #Lee la opción de jugadores ingresada por el usuario.
 os.system("clear")    #Limpia la pantalla.
+
 if(opcion == "1"):    #Si se juega a 1 jugador.
     nombre = input("Jugador:\nIngrese un Nombre:  ")    #Lee el nombre del jugador y lo guarda en la variable.
     num_game = int(input("\n\n\nIngrese el numero de partidas que desea jugar:  "))    #Lee el numero de jugadas y lo guarda en la variable.
@@ -45,6 +46,7 @@ if(opcion == "1"):    #Si se juega a 1 jugador.
         contador = contador+1    #Aumenta 1 el contador.
         pause = input("\n\n\nPulsa la tecla ENTER para continuar... ")
         os.system("clear")    #Limpia la pantalla.
+        
 elif(opcion == "2"):    #Si se juega a 2 jugadores.
     nombre_1 = input("Jugador Nº1:\nIngrese un Nombre:  ")    #Lee el nombre del jugador y lo guarda en la variable.
     print("\n\n")
@@ -68,6 +70,7 @@ elif(opcion == "2"):    #Si se juega a 2 jugadores.
         contador = contador+1    #Aumenta 1 el contador.
         pause = input("\n\n\nPulsa la tecla ENTER para continuar... ")
         os.system("clear")    #Limpia la pantalla.
+
 else:    #Si el número de jugadores no es igual a 1 o 2, levanta la excepción.
     raise Exception("\n\n¡Número incorrecto de jugadores! (Solo se puede 1 o 2 Jugadores).")
 
